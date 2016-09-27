@@ -7,48 +7,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <link href="../assets/css/general.css" rel="stylesheet">
+     <script type="text/javascript" src="../assets/syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+	<script type="text/javascript" src="../assets/syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>
+	<link type="text/css" rel="stylesheet" href="../assets/syntaxhighlighter_3.0.83/styles/shCoreDefault.css"/>
+   <script type="text/javascript">SyntaxHighlighter.all();</script>
     <title>Ejercicio 01</title>
 </head>
 
 <body>
     <header>
-        <h1>Ejemplos Objetos en Javascript</h1>
+        <h1>Ejemplo 01. Objetos en Javascript</h1>
     </header>
 
     <article>
         <div>
-            <div><br>Hacemos:</div> <code>
-                var persona = {};<br>
-                persona.nombre = "Jesus";<br>
-                persona.apellido = "Garcia";<br>
+            <div class="enunciado">Crear objetos en tiempo de ejecución</div>
+
+               <pre class="brush: js;">
+                var persona = {};
+                persona.nombre = "Jesus";
+                persona.apellido = "Garcia";
                 persona.edad = 35;
-           </code>
-            <div id="1"><br>Salida: </div>
+           </pre>
+            <div>Mostramos las propiedades del objeto:</div>
+
+            <div class="code" id="1"></div>
+
+
+
+            <div class="enunciado">Eliminar una propiedad</div>
+            <pre class="brush: js;">
+                delete persona.edad;
+            </pre>
+            <div class="code" id="2"></div>
         </div>
 
         <div>
-            <div><br>Hacemos:</div>
-            <code>
-                delete persona.edad;<br>
-            </code>
-            <div id="2"><br>Salida: </div>
-        </div>
+            <div class="enunciado">Con un Objeto Iniciador</div>
 
-        <div>
-            <div><br>Hacemos:</div>
-            <code>
+            <pre class="brush: js;">
               var perro ={
               nombre: "Dartacán",
               raza: "Dalmata"
-              };<br>
-           </code>
-            <div id="3"><br>Salida: </div>
+              };
+           </pre>
+            <div class="code" id="3"></div>
+        </div>
+
+        <div>
+            <div class="enunciado">Con Función Constructora</div>
+            <pre class="brush: js;">
+                function gato(nombre,raza){
+                    this.nombre = nombre;
+                    this.raza = raza;
+                }
+
+                var miGato =new gato("Sultan","Mixta");
+           </pre>
+            <div id="4" class="code"></div>
         </div>
 
     </article>
 
     <footer>
-        <h3>Realizado por Jesús García Navarro</h3></footer>
+        <h3>Realizado por Jesús García Navarro - 2016</h3></footer>
     <script src="index01.js"></script>
 </body>
 

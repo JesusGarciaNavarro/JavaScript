@@ -11,12 +11,13 @@ var windowOnLoad = function (e) {
     persona.edad = 35;
 
 
-    document.getElementById("1").innerHTML += '<br>' + persona.nombre + ' ' + persona.apellido + ' ' + persona.edad;
+    document.getElementById("1").innerHTML = persona.nombre + ' ' + persona.apellido + ' ' + persona.edad;
+
 
     // 2
     delete persona.edad;
 
-    document.getElementById("2").innerHTML += '<br>' + persona.nombre + ' ' + persona.apellido + ' ' + persona.edad;
+    document.getElementById("2").innerHTML +=  persona.nombre + ' ' + persona.apellido + ' ' + persona.edad;
 
 
     // 3
@@ -25,13 +26,17 @@ var windowOnLoad = function (e) {
         raza: "Dalmata"
     };
 
-     document.getElementById("3").innerHTML += '<br>' + perro.nombre + ' ' + perro.raza;
+     document.getElementById("3").innerHTML +=  perro.nombre + ' ' + perro.raza;
 
     // 4
     function gato(nombre,raza){
         this.nombre = nombre;
         this.raza = raza;
     }
+
+    var miGato = new gato("Sultan","Mixta");
+
+    document.getElementById("4").innerHTML += miGato.nombre + ' ' + miGato.raza;
 
 };
 
