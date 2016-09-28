@@ -1,5 +1,6 @@
 * {
     font-family: sans-serif;
+
 }
 
 html,
@@ -51,4 +52,9 @@ footer {
     padding: 1px 5px;;
     line-height: 1px;
     font-size: 13px;
+}
+
+.enunciado{
+    font-size: 16px;
+    font-family: Arial, Helvetica, Verdana;
 }

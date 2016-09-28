@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="../assets/css/general.css" rel="stylesheet">
+    <script type="text/javascript" src="../assets/syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+	<script type="text/javascript" src="../assets/syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>
+	<link type="text/css" rel="stylesheet" href="../assets/syntaxhighlighter_3.0.83/styles/shCoreDefault.css"/>
+    <script type="text/javascript">SyntaxHighlighter.all();</script>
+    <title>Ejercicio 02</title>
+</head>
+
+<body>
+    <header>
+        <h1>Ejemplo 02. Objetos. Prototipo y herencia</h1>
+    </header>
+
+    <article>
+       <div>
+          <div class="enunciado">
+           Si queremos que nuestro código se ejecute una
+            sola vez y que prepare en memoria todo lo
+            necesario para generar objetos, la mejor opción es
+            usar una función constructora solo con el estado
+            de una nueva instancia, y el resto (los métodos)
+            añadirlos al prototipo.
+          </div>
+          <pre class="brush: js;">
+          function Coche(modelo,marca,color,estado) {
+             this.modelo = modelo;
+             this.marca = marca;
+             this.color = color;
+             this.estado = estado;
+            }
+
+          // los métodos los ponenmos en el prototipo
+          Coche.prototype.arrancar = function() {
+            this.estado = 'arrancado';
+            console.log(this.estado);
+          };
+          </pre>
+          <div class="enunciado">Hacemos:</div>
+          <pre class="brush: js;">
+                var miCoche = new Coche('seat','ibiza','azul','apagado');
+                miCoche.arrancar();
+          </pre>
+          <div>
+              En la consola saldrá
+          </div>
+          <div class="code">arrancado</div>
+
+
+           <div class="enunciado">Herencia. </div>
+             <pre class="brush: js;">
+            // Clase Turismo
+            function Turismo(modelo,marca,color,estado,motor){
+                Coche.call(this,modelo,marca,color,estado);
+                this.motor = motor;
+            }
+
+            // A continuación tenemos que referenciar los prototype
+            Turismo.prototype = Object.create(Coche.prototype);
+
+            // Añadimos nuevos métodos.
+            Turismo.prototype.verMotor = function(){
+                console.log(this.motor);
+            }
+          </pre>
+       </div>
+        <div class="enunciado">Hacemos:</div>
+         <pre class="brush: js;">
+             //2
+            var miTurismo = new Turismo('seat','ibiza','azul','apagado',1900);
+            miTurismo.arrancar();
+            miTurismo.verMotor();
+         </pre>
+          <div>
+              En la consola saldrá
+          </div>
+          <div class="code">arrancado<br>1900</div>
+    </article>
+
+    <footer>
+        <h3>Realizado por Jesús García Navarro - 2016</h3></footer>
+    <script src="index02.js"></script>
+</body>
+
+</html>
