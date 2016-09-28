@@ -8,10 +8,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="../assets/css/general.css" rel="stylesheet">
-     <script type="text/javascript" src="../assets/syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+    <script type="text/javascript" src="../assets/syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
 	<script type="text/javascript" src="../assets/syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>
 	<link type="text/css" rel="stylesheet" href="../assets/syntaxhighlighter_3.0.83/styles/shCoreDefault.css"/>
-   <script type="text/javascript">SyntaxHighlighter.all();</script>
+    <script type="text/javascript">SyntaxHighlighter.all();</script>
     <title>Ejercicio 01</title>
 </head>
 
@@ -32,7 +32,7 @@
            </pre>
             <div>Mostramos las propiedades del objeto:</div>
 
-            <div class="code" id="1"></div>
+            <div class="code"  id="1"></div>
 
 
 
@@ -49,9 +49,14 @@
             <pre class="brush: js;">
               var perro ={
               nombre: "Dartacán",
-              raza: "Dalmata"
+              raza: "Dalmata",
+              ladrar: function(){
+                  alert("woof");
+                 }
               };
            </pre>
+           <button id="ladrar">Ladrar</button>
+           <span id="ladrido">a</span>
             <div class="code" id="3"></div>
         </div>
 
