@@ -22,7 +22,7 @@
 
     <article>
        <div>
-          <div class="enunciado">
+          <div>
            Si queremos que nuestro código se ejecute una
             sola vez y que prepare en memoria todo lo
             necesario para generar objetos, la mejor opción es
@@ -44,7 +44,7 @@
             console.log(this.estado);
           };
           </pre>
-          <div class="enunciado">Hacemos:</div>
+          <div>Hacemos:</div>
           <pre class="brush: js;">
                 var miCoche = new Coche('seat','ibiza','azul','apagado');
                 miCoche.arrancar();
@@ -55,7 +55,7 @@
           <div class="code">arrancado</div>
 
 
-           <div class="enunciado">Herencia. </div>
+           <div>Herencia. </div>
              <pre class="brush: js;">
             // Clase Turismo
             function Turismo(modelo,marca,color,estado,motor){
@@ -72,9 +72,8 @@
             }
           </pre>
        </div>
-        <div class="enunciado">Hacemos:</div>
+        <div >Hacemos:</div>
          <pre class="brush: js;">
-             //2
             var miTurismo = new Turismo('seat','ibiza','azul','apagado',1900);
             miTurismo.arrancar();
             miTurismo.verMotor();
@@ -83,6 +82,19 @@
               En la consola saldrá
           </div>
           <div class="code">arrancado<br>1900</div>
+          <div>
+            Cuando se invoca una llamada a una propiedad,
+            JavaScript primero busca en el propio objeto, y si
+            no lo encuentra busca en su prototipo, y sino en el
+            prototipo del prototipo, así hasta el prototipo de
+            Object que es null. En el ejemplo anterior:
+          </div>
+           <pre class="brush: js;">
+            miTurismo.__proto__ == Turismo.prototype // true
+            miTurismo.__proto__.__proto__ == Coche.prototype // true
+            miTurismo.__proto__.__proto__.__proto__ == Object.prototype // true
+            miTurismo.__proto__.__proto__.__proto__.__proto__ == null // true
+           </pre>
     </article>
 
     <footer>
